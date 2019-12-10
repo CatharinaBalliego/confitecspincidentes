@@ -1,0 +1,8 @@
+127.0.0.1 - - [22/Nov/2019:11:55:24 -0300] "GET /incidente HTTP/1.1" 302 - http-bio-9090-exec-1 0
+127.0.0.1 - - [22/Nov/2019:11:55:29 -0300] "GET /incidente/ HTTP/1.1" 500 3559 http-bio-9090-exec-2 5599
+127.0.0.1 - - [22/Nov/2019:11:55:30 -0300] "GET /favicon.ico HTTP/1.1" 404 - http-bio-9090-exec-3 0
+127.0.0.1 - - [22/Nov/2019:11:57:00 -0300] "GET /incidente/ HTTP/1.1" 200 937 http-bio-9090-exec-1 3021
+127.0.0.1 - - [22/Nov/2019:11:57:35 -0300] "GET /incidente/adicionar.xhtml HTTP/1.1" 200 1118 http-bio-9090-exec-2 145
+127.0.0.1 - - [22/Nov/2019:11:57:39 -0300] "POST /incidente/adicionar.xhtml HTTP/1.1" 200 1274 http-bio-9090-exec-3 63
+127.0.0.1 - - [22/Nov/2019:11:57:39 -0300] "GET /favicon.ico HTTP/1.1" 404 - http-bio-9090-exec-4 0
+127.0.0.1 - - [22/Nov/2019:12:16:34 -0300] "GET /incidente/adicionar.xhtml HTTP/1.1" 200 1120 http-bio-9090-exec-6 6

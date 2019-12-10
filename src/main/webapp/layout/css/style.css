@@ -1,0 +1,12 @@
+div#content {
+           background-color: rgba(192, 192, 192, 0.3);
+           box-shadow: 1px 1px 4px grey;
+
+           padding-top: 100px; padding-bottom: 75px; width: 99%; margin:auto}
+           .link {
+            float:right;
+            padding-right:50px;
+            }
+            .btnNovo {
+            background:black
+            }

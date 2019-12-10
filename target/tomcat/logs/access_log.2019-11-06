@@ -1,0 +1,5 @@
+127.0.0.1 - - [06/Nov/2019:10:56:58 -0300] "GET /incidente HTTP/1.1" 302 - http-bio-9090-exec-1 0
+127.0.0.1 - - [06/Nov/2019:10:56:58 -0300] "GET /incidente/ HTTP/1.1" 200 255 http-bio-9090-exec-2 555
+127.0.0.1 - - [06/Nov/2019:10:56:58 -0300] "GET /favicon.ico HTTP/1.1" 404 - http-bio-9090-exec-3 0
+127.0.0.1 - - [06/Nov/2019:16:12:47 -0300] "GET /incidente HTTP/1.1" 302 - http-bio-9090-exec-1 0
+127.0.0.1 - - [06/Nov/2019:16:12:48 -0300] "GET /incidente/ HTTP/1.1" 200 255 http-bio-9090-exec-2 554

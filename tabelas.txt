@@ -1,0 +1,27 @@
+create database confitec_incidentes;
+use confitec_incitentes;
+
+create table motivo_abertura (
+cd_abertura int(3) NOT NULL AUTO_INCREMENT,
+desc_abertura varchar(200) NOT NULL,
+PRIMARY KEY (cd_abertura));
+
+
+
+create table motivo_encerramento (
+cd_encerramento int(3),
+cd_abertura int(3)  NOT NULL,
+desc_encerramento varchar(200) NOT NULL,
+PRIMARY KEY (cd_encerramento),
+FOREIGN KEY motiv_abertura_fk(cd_abertura) REFERENCES  motivo_abertura(cd_abertura));
+
+create table classificacao_incidente (
+cd_incidente varchar(10),
+motivo_abertura int(3) NOT NULL,
+motivo_encerramento int(3) NOT NULL,
+PRIMARY KEY (cd_incidente),
+CONSTRAINT id_abertura_fk FOREIGN KEY (motivo_abertura)
+REFERENCES  motivo_abertura(cd_abertura),
+CONSTRAINT id_encerramento_fk FOREIGN KEY (motivo_encerramento)
+REFERENCES  motivo_encerramento(cd_encerramento)
+);

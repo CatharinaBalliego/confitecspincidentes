@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:b="http://bootsfaces.net/ui"
+      xmlns:ui="http://java.sun.com/jsf/facelets">
+<h:head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <title> Adicionar</title>
+    <style>
+
+    </style>
+</h:head>
+<h:body>
+    <ui:composition template = "layout/testTemplate.xhtml">
+        <ui:define name = "content">
+<!--    <b:form horizontal="true">-->
+
+            <b:container fluid="true">
+        <h3>Registrar Novo Incidente</h3>
+        <br/>
+
+<h:form>
+
+        <b:panelGrid columns="3">
+            <h:outputLabel value="Numero do Incidente: "/>
+            <b:inputText id="num_incidente" value="#{classificacaoBean.classificacao.num_incidente}" required="true" labe="Num_incidente" >
+                <f:validateLength minimum="10" maximum="10"/>
+            </b:inputText>
+            <b:message for="num_incidente"/>
+
+            <h:outputLabel value="Codigo de Abertura: "/>
+            <b:selectOneMenu value="#{classificacaoBean.classificacao.cd_abertura}"  required="true" converter="aberturaConverter" id="cd_abertura">
+                <f:selectItem itemLabel="" itemValue=""/>
+                <f:selectItem itemLabel="Aplicar melhoria" itemValue="100"/>
+                <f:selectItem itemLabel="Correcao de problema" itemValue="101"/>
+            </b:selectOneMenu>
+            <b:message for="cd_abertura"/>
+
+            <h:outputLabel value="Codigo de Encerramento: "/>
+            <b:selectOneMenu value="#{classificacaoBean.classificacao.cd_encerramento}" required="true" converter="encerramentoConverter" id="cd_encerramento">
+                <f:selectItem itemLabel="" itemValue=""/>
+                <f:selectItem itemLabel="encerrado com problemas" itemValue="100"/>
+                <f:selectItem itemLabel="encerrado com sucesso" itemValue="101"/>
+            </b:selectOneMenu>
+
+            <b:message for="cd_encerramento"/>
+        </b:panelGrid>
+        <b:commandButton value="Enviar" action="#{classificacaoBean.cadastrar}" class="enviarBtn"/>
+</h:form>
+
+            </b:container>
+
+<!--    </b:form>-->
+<br></br>
+            <h:link value="Voltar" outcome="home" class="btnNovo"/>
+        </ui:define>
+    </ui:composition>
+</h:body>
+</html>
