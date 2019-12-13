@@ -11,12 +11,16 @@
 
         <properties>
             <property name="javax.persistence.jdbc.url"
-                      value="jdbc:mysql://127.0.0.1:3306/incidente?createDatabaseIfNotExist=true&amp;useSSl=false&amp;useTimezone=true&amp;serverTimezone=America/Sao_Paulo&amp;autoReconnect=true"/>
-            <property name="javax.persistence.jdbc.user" value="catharina"/>
-            <property name="javax.persistence.jdbc.password" value="12345"/>
-            <property name="javax.persistence.jdbc.driver" value="com.mysql.cj.jdbc.Driver"/>
+                      value="jdbc:jtds:sqlserver://172.16.10.13;databaseName=processos_corretivos"/>
+            <property name="javax.persistence.jdbc.user" value="usr_processos_corretivos"/>
+            <property name="javax.persistence.jdbc.password" value="processos_2014"/>
+            <property name="javax.persistence.jdbc.driver" value="net.sourceforge.jtds.jdbc.Driver"/>
 
-            <property name="hibernate.dialect" value="org.hibernate.dialect.MySQL57Dialect"/>
+<!--            <property name="javax.persistence.jdbc.driver" value="com.microsoft.sqlserver.jdbc.SQLServerDriver"/>-->
+<!--            <property name="javax.persistence.jdbc.url"-->
+<!--                      value="jdbc:sqlserver://172.16.10.13:1433/processos_corretivos?createDatabaseIfNotExist=true&amp;useSSl=false&amp;autoReconnect=true"/>-->
+
+            <property name="hibernate.dialect" value="org.hibernate.dialect.SQLServerDialect"/>
             <property name="hibernate.show_sql" value="true"/>
             <property name="hibernate.format_sql" value="true"/>
             <property name="hibernate.hbm2ddl.auto" value="update"/>

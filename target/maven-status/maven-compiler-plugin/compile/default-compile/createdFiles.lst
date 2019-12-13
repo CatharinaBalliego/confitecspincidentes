@@ -2,10 +2,13 @@ br\com\confitecsp\java\web\dao\MotivoAberturaDao.class
 br\com\confitecsp\java\web\model\MotivoEncerramento.class
 br\com\confitecsp\java\web\dao\MotivoEncerramentoDao.class
 br\com\confitecsp\java\web\bean\ClassificacaoBean.class
+br\com\confitecsp\java\web\model\TomcatController.class
 br\com\confitecsp\java\web\model\MotivoAbertura.class
 br\com\confitecsp\java\web\bean\MotivoAberturaBean.class
 br\com\confitecsp\java\web\dao\ClassificacaoDao.class
+br\com\confitecsp\java\web\model\StartServer.class
 br\com\confitecsp\java\web\bean\JpaResourceBean.class
+br\com\confitecsp\java\web\model\ViewController.class
 br\com\confitecsp\java\web\model\AberturaConverter.class
 br\com\confitecsp\java\web\bean\MotivoEncerramentoBean.class
 br\com\confitecsp\java\web\model\Classificacao.class

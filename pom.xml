@@ -7,27 +7,92 @@
     <groupId>br.com.confitecsp.java</groupId>
     <artifactId>Incidente</artifactId>
     <version>1.0</version>
-
     <packaging>war</packaging>
 
+    <name>ClassificacaoChamadosWar</name>
+    <parent>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-starter-parent</artifactId>
+        <version>1.5.3.RELEASE</version>
+        <relativePath/>
+    </parent>
+
     <properties>
+        <start-class>br.com.confitecsp.java.web.model.ViewController</start-class>
         <jsf.version>2.2.13</jsf.version>
         <hibernate.version>5.2.10.Final</hibernate.version>
         <bean.validation.version>1.1.0.Final</bean.validation.version>
         <hibernate.validator.version>5.4.1.Final</hibernate.validator.version>
-        <mysql.connector.java.version>8.0.11</mysql.connector.java.version>
         <compiler.version>3.6.1</compiler.version>
         <java.version>1.8</java.version>
-        <tomcat7.maven.plugin.version>2.2</tomcat7.maven.plugin.version>
-        <tomcat7.port>9090</tomcat7.port>
-        <tomcat7.path>/incidente</tomcat7.path>
 
-        <java.version>1.6</java.version>
+<!--        <tomcat7.maven.plugin.version>2.2</tomcat7.maven.plugin.version>-->
+<!--        <tomcat7.port>9090</tomcat7.port>-->
+<!--        <tomcat7.path>/incidente</tomcat7.path>-->
+
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
     </properties>
 
+
     <dependencies>
+<!--spring boot-->
+
+<!--        <dependency>-->
+<!--            <groupId>org.springframework.boot</groupId>-->
+<!--            <artifactId>spring-boot-starter-data-jpa</artifactId>-->
+<!--        </dependency>-->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-thymeleaf</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-web</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-tomcat</artifactId>
+            <scope>provided</scope>
+        </dependency>
+
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-devtools</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-test</artifactId>
+            <scope>test</scope>
+        </dependency>
+
+
+
+
+
+
+        <!-- https://mvnrepository.com/artifact/com.microsoft.sqlserver/mssql-jdbc -->
+    <dependency>
+        <groupId>com.microsoft.sqlserver</groupId>
+    <artifactId>mssql-jdbc</artifactId>
+        <version>7.0.0.jre8</version>
+        <scope>compile</scope>
+    </dependency>
+
+        <dependency>
+            <groupId>org.hibernate</groupId>
+            <artifactId>hibernate-core</artifactId>
+            <version>5.4.0.Final</version>
+        </dependency>
+
+        <dependency>
+            <groupId>net.sourceforge.jtds</groupId>
+            <artifactId>jtds</artifactId>
+            <version>1.2.4</version>
+        </dependency>
+
         <dependency>
             <groupId>com.sun.faces</groupId>
             <artifactId>jsf-api</artifactId>
@@ -62,11 +127,6 @@
             <artifactId>hibernate-entitymanager</artifactId>
             <version>${hibernate.version}</version>
         </dependency>
-        <dependency>
-            <groupId>mysql</groupId>
-            <artifactId>mysql-connector-java</artifactId>
-            <version>${mysql.connector.java.version}</version>
-        </dependency>
 
         <dependency>
             <groupId>net.bootsfaces</groupId>
@@ -74,32 +134,22 @@
             <version>1.4.0</version>
         </dependency>
 
-
-
-
 <!--         https://mvnrepository.com/artifact/javax.xml.bind/jaxb-api-->
         <dependency>
             <groupId>javax.xml.bind</groupId>
             <artifactId>jaxb-api</artifactId>
             <version>2.3.1</version>
         </dependency>
-
+<!--    spring boot  -->
 
 
     </dependencies>
 
 
     <build>
+        <finalName>classificacaoChamado</finalName>
         <plugins>
-            <plugin>
-                <groupId>org.apache.tomcat.maven</groupId>
-                <artifactId>tomcat7-maven-plugin</artifactId>
-                <version>${tomcat7.maven.plugin.version}</version>
-                <configuration>
-                    <port>${tomcat7.port}</port>
-                    <path>${tomcat7.path}</path>
-                </configuration>
-            </plugin>
+
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-compiler-plugin</artifactId>
@@ -109,6 +159,8 @@
                     <target>${java.version}</target>
                 </configuration>
             </plugin>
+
+
         </plugins>
     </build>
 
