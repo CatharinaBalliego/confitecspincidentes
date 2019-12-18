@@ -47,13 +47,24 @@
                 <f:selectItem itemLabel="Erro de tela" itemValue="2"/>
                 <f:selectItem itemLabel="Dados incorretos" itemValue="3"/>
                 <f:selectItem itemLabel="Erro de execução de batch" itemValue="4"/>
+                <f:selectItem itemLabel="Cognos (BI)" itemValue="5"/>
+                <f:selectItem itemLabel="Emissão" itemValue="6"/>
+                <f:selectItem itemLabel="Comissão / Tronador" itemValue="7"/>
+                <f:selectItem itemLabel="Sinistros" itemValue="8"/>
+                <f:selectItem itemLabel="Faturamento/Cobrança" itemValue="9"/>
+                <f:selectItem itemLabel="Batch" itemValue="10"/>
+                <f:selectItem itemLabel="Acesso" itemValue="11"/>
+                <f:selectItem itemLabel="Cancelamento" itemValue="12"/>
             </b:selectOneMenu>
             <b:message for="cd_abertura"/>
 
             <h:outputLabel value="Motivo de Encerramento: "/>
             <b:selectOneMenu value="#{classificacaoBean.classificacao.cd_encerramento}" required="true" converter="encerramentoConverter" id="cd_encerramento">
-                <f:selectItem itemLabel="encerrado com problemas" itemValue="1"/>
-                <f:selectItem itemLabel="encerrado com sucesso" itemValue="2"/>
+                <f:selectItem itemLabel="Correção de dados" itemValue="1"/>
+                <f:selectItem itemLabel="Dúvida operacional" itemValue="2"/>
+                <f:selectItem itemLabel="Para analisar/Possível melhoria" itemValue="3"/>
+                <f:selectItem itemLabel="Reexecutado com sucesso" itemValue="4"/>
+                <f:selectItem itemLabel="Causa raiz tratada" itemValue="5"/>
             </b:selectOneMenu>
             <b:message for="cd_encerramento"/>
 
