@@ -1,5 +1,6 @@
 br\com\confitecsp\java\web\dao\MotivoAberturaDao.class
 br\com\confitecsp\java\web\model\MotivoEncerramento.class
+br\com\confitecsp\java\web\model\User.class
 br\com\confitecsp\java\web\dao\MotivoEncerramentoDao.class
 br\com\confitecsp\java\web\bean\ClassificacaoBean.class
 br\com\confitecsp\java\web\model\TomcatController.class
