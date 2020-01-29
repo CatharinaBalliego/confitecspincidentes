@@ -67,8 +67,54 @@
                 <f:selectItem itemLabel="Trocou de fila" itemValue="8"/>
                 <f:selectItem itemLabel="Demanda homologada" itemValue="9"/>
             </b:selectOneMenu>
-
             <b:message for="cd_encerramento"/>
+
+            <h:outputLabel value="Usuario: "/>
+            <b:selectOneMenu value="#{classificacaoBean.classificacao.cd_email_usuario}" required="true" converter="emailConverter" id="cd_email_usuario">
+                <f:selectItem itemLabel="" itemValue=""/>
+                <f:selectItem itemLabel="catharina.cypriano@confitec.com.br" itemValue="1"/>
+                <f:selectItem itemLabel="victor.silva@confitec.com.br" itemValue="2"/>
+                <f:selectItem itemLabel="rodrigo.oliveira@confitec.com.br" itemValue="3"/>
+                <f:selectItem itemLabel="fabio.miranda@confitec.com.br" itemValue="4"/>
+                <f:selectItem itemLabel="gerson.pinto@confitec.com.br" itemValue="5"/>
+                <f:selectItem itemLabel="rogerio.souza@confitec.com.br" itemValue="6"/>
+                <f:selectItem itemLabel="raphael.ricardo@confitec.com.br" itemValue="7"/>
+                <f:selectItem itemLabel="bruno.gama@confitec.com.br" itemValue="8"/>
+                <f:selectItem itemLabel="myrella.silva@confitec.com.br" itemValue="9"/>
+                <f:selectItem itemLabel="hugo.silva@confitec.com.br" itemValue="10"/>
+                <f:selectItem itemLabel="samantha.carvalho@confitec.com.br" itemValue="11"/>
+                <f:selectItem itemLabel="leone.fernandes@confitec.com.br" itemValue="12"/>
+                <f:selectItem itemLabel="luis.fernandes@confitec.com.br" itemValue="13"/>
+                <f:selectItem itemLabel="henry.gomes@confitec.com.br" itemValue="14"/>
+                <f:selectItem itemLabel="rafael.rino@confitec.com.br" itemValue="15"/>
+                <f:selectItem itemLabel="patrick.muniz@confitec.com.br" itemValue="16"/>
+                <f:selectItem itemLabel="raphael.esposel@confitec.com.br" itemValue="17"/>
+                <f:selectItem itemLabel="marco.souza@confitec.com.br" itemValue="18"/>
+                <f:selectItem itemLabel="renato.alves@confitec.com.br" itemValue="19"/>
+                <f:selectItem itemLabel="bruno.carneiro@confitec.com.br" itemValue="20"/>
+                <f:selectItem itemLabel="renata.brandao@confitec.com.br" itemValue="21"/>
+                <f:selectItem itemLabel="francini.sa@confitec.com.br" itemValue="22"/>
+                <f:selectItem itemLabel="flavio.adao@confitec.com.br" itemValue="23"/>
+                <f:selectItem itemLabel="sergio.doria@confitec.com.br" itemValue="24"/>
+
+            </b:selectOneMenu>
+            <b:message for="cd_email_usuario"/>
+
+            <h:outputLabel value="Grupo Designado: "/>
+            <b:selectOneMenu value="#{classificacaoBean.classificacao.cd_grupo}" required="true" converter="grupoConverter" id="cd_grupo">
+                <f:selectItem itemLabel="" itemValue=""/>
+                <f:selectItem itemLabel="AdHoc GEPRO" itemValue="7"/>
+                <f:selectItem itemLabel="AdHoc MPVR Dotal" itemValue="3"/>
+                <f:selectItem itemLabel="Sust MPVR Dotal" itemValue="4"/>
+                <f:selectItem itemLabel="AdHoc SIES" itemValue="5"/>
+                <f:selectItem itemLabel="AdHoc Vida Nova" itemValue="2"/>
+                <f:selectItem itemLabel="Sust GEPRO" itemValue="8"/>
+                <f:selectItem itemLabel="Sust SIES" itemValue="6"/>
+                <f:selectItem itemLabel="Sust Vida Nova" itemValue="1"/>
+            </b:selectOneMenu>
+            <b:message for="cd_grupo"/>
+
+
         </b:panelGrid>
         <b:commandButton value="Enviar" action="#{classificacaoBean.cadastrar}" class="enviarBtn"/>
 </h:form>

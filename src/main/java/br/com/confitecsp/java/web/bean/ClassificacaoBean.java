@@ -11,6 +11,7 @@ import javax.faces.bean.ManagedBean;
 import javax.faces.bean.ViewScoped;
 import javax.faces.context.FacesContext;
 import java.io.Serializable;
+import java.time.LocalDateTime;
 import java.util.List;
 
 @ManagedBean
@@ -47,6 +48,7 @@ public class ClassificacaoBean implements Serializable {
 
     public String cadastrar(){
         try{
+            classificacao.setData_cadastro(LocalDateTime.now());
             classificacaoDao.cadastrar(classificacao);
 
             incidentes = classificacaoDao.listarTodos();

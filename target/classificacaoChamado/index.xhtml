@@ -38,6 +38,18 @@
                     <f:facet name="header">Motivo Encerramento</f:facet>
                     #{incidente.cd_encerramento.desc_encerramento}
                 </b:column>
+                <b:column>
+                    <f:facet name="header">Usuario</f:facet>
+                    #{incidente.cd_email_usuario.desc_usuario_email}
+                </b:column>
+                <b:column>
+                    <f:facet name="header">Grupo Designado</f:facet>
+                    #{incidente.cd_grupo.desc_grupo_nome}
+                </b:column>
+                <b:column>
+                    <f:facet name="header">Data de Cadastro: </f:facet>
+                    #{incidente.data_cadastro}
+                </b:column>
 
                 <b:column>
                     <f:facet name="header">Editar</f:facet>

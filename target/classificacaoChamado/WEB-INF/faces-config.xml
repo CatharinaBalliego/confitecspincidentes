@@ -48,5 +48,16 @@
     </converter>
 
 
+    <converter>
+        <description>A Converter for email usuario</description>
+        <converter-id>emailConverter</converter-id>
+        <converter-class>br.com.confitecsp.java.web.model.EmailConverter</converter-class>
+    </converter>
+
+    <converter>
+        <description>A Converter for grupo designado</description>
+        <converter-id>grupoConverter</converter-id>
+        <converter-class>br.com.confitecsp.java.web.model.GrupoConverter</converter-class>
+    </converter>
 
 </faces-config>

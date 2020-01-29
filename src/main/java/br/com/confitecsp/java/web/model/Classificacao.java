@@ -1,8 +1,12 @@
 package br.com.confitecsp.java.web.model;
 
+import org.hibernate.type.descriptor.java.LocalDateTimeJavaDescriptor;
+
 import javax.persistence.*;
 import javax.validation.constraints.Size;
 import java.io.Serializable;
+import java.time.LocalDateTime;
+import java.util.Date;
 
 @Entity
 @Table(name="classificacao_incidente")
@@ -28,6 +32,18 @@ public class Classificacao  implements Serializable {
     @JoinColumn(name = "cd_encerramento",  nullable = false)
     private MotivoEncerramento cd_encerramento;
 
+
+    @ManyToOne(cascade={CascadeType.PERSIST})
+    @JoinColumn(name = "cd_grupo") //adicionar not null depois
+    private GrupoDesignado cd_grupo;
+
+    @ManyToOne(cascade={CascadeType.PERSIST})
+    @JoinColumn(name = "cd_email_usuario") //adicionar not null depois
+    private EmailUsuario cd_email_usuario;
+
+
+    @Column(name = "data_cadastro", columnDefinition = "DATETIME")
+    private LocalDateTime data_cadastro;
 
 
 
@@ -68,12 +84,49 @@ public class Classificacao  implements Serializable {
         this.cd_encerramento = cd_encerramento;
     }
 
+    public GrupoDesignado getCd_grupo() {
+        return cd_grupo;
+    }
+
+    public void setCd_grupo(GrupoDesignado cd_grupo) {
+        this.cd_grupo = cd_grupo;
+    }
+
+    public EmailUsuario getCd_email_usuario() {
+        return cd_email_usuario;
+    }
+
+    public void setCd_email_usuario(EmailUsuario cd_email_usuario) {
+        this.cd_email_usuario = cd_email_usuario;
+    }
+
+    public LocalDateTime getData_cadastro() {
+        return data_cadastro;
+    }
+
+    public void setData_cadastro(LocalDateTime data_cadastro) {
+        this.data_cadastro = data_cadastro;
+    }
+
+    //    @Override
+//    public String toString() {
+//        return "ClassificacaoIncidente{" +
+//                "cd_incidente='" + cd_incidente + '\'' +
+//                ", motivo_abertura=" + cd_abertura +
+//                ", motivo_encerramento=" + cd_encerramento +
+//                '}';
+//    }
+
+
     @Override
     public String toString() {
-        return "ClassificacaoIncidente{" +
-                "cd_incidente='" + cd_incidente + '\'' +
-                ", motivo_abertura=" + cd_abertura +
-                ", motivo_encerramento=" + cd_encerramento +
+        return "Classificacao{" +
+                "cd_incidente=" + cd_incidente +
+                ", num_incidente='" + num_incidente + '\'' +
+                ", cd_abertura=" + cd_abertura +
+                ", cd_encerramento=" + cd_encerramento +
+                ", cd_grupo=" + cd_grupo +
+                ", cd_email_usuario=" + cd_email_usuario +
                 '}';
     }
 }

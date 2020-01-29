@@ -18,74 +18,107 @@
 <h:body >
     <ui:composition template = "layout/testTemplate.xhtml">
         <ui:define name = "content">
-    <h:messages globalOnly="true"/>
+            <h:messages globalOnly="true"/>
 
-    <h:panelGroup rendered="#{classificacaoBean.classificacao.cd_incidente != 0}">
-
-
-        <b:container fluid="true">
-            <h3>Editar Incidente
-                "<h:outputText value="#{classificacaoBean.classificacao.num_incidente}"/>"
-            </h3>
-            <br/>
+            <h:panelGroup rendered="#{classificacaoBean.classificacao.cd_incidente != 0}">
 
 
-        <h:form>
-        <b:panelGrid columns="3">
+                <b:container fluid="true">
+                    <h3>Editar Incidente
+                        "<h:outputText value="#{classificacaoBean.classificacao.num_incidente}"/>"
+                    </h3>
+                    <br/>
 
 
-            <h:outputLabel value="Numero do Incidente: "/>
-            <b:inputText id="num_incidente" value="#{classificacaoBean.classificacao.num_incidente}" required="true">
-                <f:validateLength minimum="10" maximum="10"/>
-            </b:inputText>
-            <b:message for="num_incidente"/>
+                    <h:form>
+                        <b:panelGrid columns="3">
 
 
-            <h:outputLabel value="Motivo de Abertura: "/>
-            <b:selectOneMenu value="#{classificacaoBean.classificacao.cd_abertura}" required="true" converter="aberturaConverter" id="cd_abertura">
-                <f:selectItem itemLabel="Duvida operacional" itemValue="1"/>
-                <f:selectItem itemLabel="Erro de tela" itemValue="2"/>
-                <f:selectItem itemLabel="Dados incorretos" itemValue="3"/>
-                <f:selectItem itemLabel="Erro de execução de batch" itemValue="4"/>
-                <f:selectItem itemLabel="Cognos (BI)" itemValue="5"/>
-                <f:selectItem itemLabel="Emissão" itemValue="6"/>
-                <f:selectItem itemLabel="Comissão / Tronador" itemValue="7"/>
-                <f:selectItem itemLabel="Sinistros" itemValue="8"/>
-                <f:selectItem itemLabel="Faturamento/Cobrança" itemValue="9"/>
-                <f:selectItem itemLabel="Batch" itemValue="10"/>
-                <f:selectItem itemLabel="Acesso" itemValue="11"/>
-                <f:selectItem itemLabel="Cancelamento" itemValue="12"/>
-                <f:selectItem itemLabel="Carga de Arquivo" itemValue="13"/>
-                <f:selectItem itemLabel="Extração de Dados" itemValue="14"/>
-                <f:selectItem itemLabel="Criação de Processo" itemValue="15"/>
-                <f:selectItem itemLabel="Alteração de Processo" itemValue="16"/>
-
-            </b:selectOneMenu>
-            <b:message for="cd_abertura"/>
-
-            <h:outputLabel value="Motivo de Encerramento: "/>
-            <b:selectOneMenu value="#{classificacaoBean.classificacao.cd_encerramento}" required="true" converter="encerramentoConverter" id="cd_encerramento">
-                <f:selectItem itemLabel="Correção de dados" itemValue="1"/>
-                <f:selectItem itemLabel="Dúvida operacional" itemValue="2"/>
-                <f:selectItem itemLabel="Para analisar/Possível melhoria" itemValue="3"/>
-                <f:selectItem itemLabel="Reexecutado com sucesso" itemValue="4"/>
-                <f:selectItem itemLabel="Causa raiz tratada" itemValue="5"/>
-                <f:selectItem itemLabel="Explicação ao cliente" itemValue="6"/>
-                <f:selectItem itemLabel="Encaminhado para demanda" itemValue="7"/>
-                <f:selectItem itemLabel="Trocou de fila" itemValue="8"/>
-                <f:selectItem itemLabel="Demanda homologada" itemValue="9"/>
-            </b:selectOneMenu>
-            <b:message for="cd_encerramento"/>
+                            <h:outputLabel value="Numero do Incidente: "/>
+                            <b:inputText id="num_incidente" value="#{classificacaoBean.classificacao.num_incidente}" required="true">
+                                <f:validateLength minimum="10" maximum="10"/>
+                            </b:inputText>
+                            <b:message for="num_incidente"/>
 
 
-        </b:panelGrid>
-            <b:commandButton value="Enviar" action="#{classificacaoBean.atualizar}" class="enviarBtn"/>
-        </h:form>
+                            <h:outputLabel value="Motivo de Abertura: "/>
+                            <b:selectOneMenu value="#{classificacaoBean.classificacao.cd_abertura}" required="true" converter="aberturaConverter" id="cd_abertura">
+                                <f:selectItem itemLabel="Duvida operacional" itemValue="1"/>
+                                <f:selectItem itemLabel="Erro de tela" itemValue="2"/>
+                                <f:selectItem itemLabel="Dados incorretos" itemValue="3"/>
+                                <f:selectItem itemLabel="Erro de execução de batch" itemValue="4"/>
+                                <f:selectItem itemLabel="Cognos (BI)" itemValue="5"/>
+                                <f:selectItem itemLabel="Emissão" itemValue="6"/>
+                                <f:selectItem itemLabel="Comissão / Tronador" itemValue="7"/>
+                                <f:selectItem itemLabel="Sinistros" itemValue="8"/>
+                                <f:selectItem itemLabel="Faturamento/Cobrança" itemValue="9"/>
+                                <f:selectItem itemLabel="Batch" itemValue="10"/>
+                                <f:selectItem itemLabel="Acesso" itemValue="11"/>
+                                <f:selectItem itemLabel="Cancelamento" itemValue="12"/>
+                            </b:selectOneMenu>
+                            <b:message for="cd_abertura"/>
 
-        </b:container>
-<br></br>
-        <h:link value="Voltar" outcome="home" class="btnNovo"/>
-    </h:panelGroup>
+                            <h:outputLabel value="Motivo de Encerramento: "/>
+                            <b:selectOneMenu value="#{classificacaoBean.classificacao.cd_encerramento}" required="true" converter="encerramentoConverter" id="cd_encerramento">
+                                <f:selectItem itemLabel="Correção de dados" itemValue="1"/>
+                                <f:selectItem itemLabel="Dúvida operacional" itemValue="2"/>
+                                <f:selectItem itemLabel="Para analisar/Possível melhoria" itemValue="3"/>
+                                <f:selectItem itemLabel="Reexecutado com sucesso" itemValue="4"/>
+                                <f:selectItem itemLabel="Causa raiz tratada" itemValue="5"/>
+                            </b:selectOneMenu>
+                            <b:message for="cd_encerramento"/>
+
+                            <h:outputLabel value="Usuario: "/>
+                            <b:selectOneMenu value="#{classificacaoBean.classificacao.cd_email_usuario}" required="true" converter="emailConverter" id="cd_email_usuario">
+                                <f:selectItem itemLabel="catharina.cypriano@confitec.com.br" itemValue="1"/>
+                                <f:selectItem itemLabel="victor.silva@confitec.com.br" itemValue="2"/>
+                                <f:selectItem itemLabel="rodrigo.oliveira@confitec.com.br" itemValue="3"/>
+                                <f:selectItem itemLabel="fabio.miranda@confitec.com.br" itemValue="4"/>
+                                <f:selectItem itemLabel="gerson.pinto@confitec.com.br" itemValue="5"/>
+                                <f:selectItem itemLabel="rogerio.souza@confitec.com.br" itemValue="6"/>
+                                <f:selectItem itemLabel="raphael.ricardo@confitec.com.br" itemValue="7"/>
+                                <f:selectItem itemLabel="bruno.gama@confitec.com.br" itemValue="8"/>
+                                <f:selectItem itemLabel="myrella.silva@confitec.com.br" itemValue="9"/>
+                                <f:selectItem itemLabel="hugo.silva@confitec.com.br" itemValue="10"/>
+                                <f:selectItem itemLabel="samantha.carvalho@confitec.com.br" itemValue="11"/>
+                                <f:selectItem itemLabel="leone.fernandes@confitec.com.br" itemValue="12"/>
+                                <f:selectItem itemLabel="luis.fernandes@confitec.com.br" itemValue="13"/>
+                                <f:selectItem itemLabel="henry.gomes@confitec.com.br" itemValue="14"/>
+                                <f:selectItem itemLabel="rafael.rino@confitec.com.br" itemValue="15"/>
+                                <f:selectItem itemLabel="patrick.muniz@confitec.com.br" itemValue="16"/>
+                                <f:selectItem itemLabel="raphael.esposel@confitec.com.br" itemValue="17"/>
+                                <f:selectItem itemLabel="marco.souza@confitec.com.br" itemValue="18"/>
+                                <f:selectItem itemLabel="renato.alves@confitec.com.br" itemValue="19"/>
+                                <f:selectItem itemLabel="bruno.carneiro@confitec.com.br" itemValue="20"/>
+                                <f:selectItem itemLabel="renata.brandao@confitec.com.br" itemValue="21"/>
+                                <f:selectItem itemLabel="francini.sa@confitec.com.br" itemValue="22"/>
+                                <f:selectItem itemLabel="flavio.adao@confitec.com.br" itemValue="23"/>
+                                <f:selectItem itemLabel="sergio.doria@confitec.com.br" itemValue="24"/>
+                            </b:selectOneMenu>
+                            <b:message for="cd_email_usuario"/>
+
+                            <h:outputLabel value="Grupo Designado: "/>
+                            <b:selectOneMenu value="#{classificacaoBean.classificacao.cd_grupo}" required="true" converter="grupoConverter" id="cd_grupo">
+                                <f:selectItem itemLabel="AdHoc GEPRO" itemValue="7"/>
+                                <f:selectItem itemLabel="AdHoc MPVR Dotal" itemValue="3"/>
+                                <f:selectItem itemLabel="Sust MPVR Dotal" itemValue="4"/>
+                                <f:selectItem itemLabel="AdHoc SIES" itemValue="5"/>
+                                <f:selectItem itemLabel="AdHoc Vida Nova" itemValue="2"/>
+                                <f:selectItem itemLabel="Sust GEPRO" itemValue="8"/>
+                                <f:selectItem itemLabel="Sust SIES" itemValue="6"/>
+                                <f:selectItem itemLabel="Sust Vida Nova" itemValue="1"/>
+                            </b:selectOneMenu>
+                            <b:message for="cd_grupo"/>
+
+
+                        </b:panelGrid>
+                        <b:commandButton value="Enviar" action="#{classificacaoBean.atualizar}" class="enviarBtn"/>
+                    </h:form>
+
+                </b:container>
+                <br></br>
+                <h:link value="Voltar" outcome="home" class="btnNovo"/>
+            </h:panelGroup>
         </ui:define>
     </ui:composition>
 </h:body>
