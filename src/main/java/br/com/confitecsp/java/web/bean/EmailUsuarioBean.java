@@ -59,4 +59,13 @@ public class EmailUsuarioBean implements Serializable {
         }
 
     }
+    public List<EmailUsuario> getSelecionarEmail(){
+        try{
+            listarEmail = emailUsuarioDao.listarTodos();
+        }catch (Exception e){
+            FacesMessage message = new FacesMessage(e.getMessage());
+            message.setSeverity(FacesMessage.SEVERITY_ERROR);
+            FacesContext.getCurrentInstance().addMessage(null, message);
+        } return  listarEmail;
+    }
 }

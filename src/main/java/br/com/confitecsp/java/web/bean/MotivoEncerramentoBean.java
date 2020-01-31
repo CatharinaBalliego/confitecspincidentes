@@ -106,4 +106,14 @@ public class MotivoEncerramentoBean implements Serializable {
             FacesContext.getCurrentInstance().addMessage(null, message);
         }
     }
+    public List<MotivoEncerramento> getBuscarEncerramento(){
+        try{
+            incidentesFechados = motivoEncerramentoDao.listarTodos();
+        }catch (Exception e){
+            FacesMessage message = new FacesMessage(e.getMessage());
+            message.setSeverity(FacesMessage.SEVERITY_ERROR);
+            FacesContext.getCurrentInstance().addMessage(null, message);
+
+        } return incidentesFechados;
+    }
 }

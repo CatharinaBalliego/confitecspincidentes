@@ -57,5 +57,14 @@ public class GrupoDesignadoBean implements Serializable{
         }
     }
 
-
+    public List<GrupoDesignado> getBuscarGrupos(){
+        try{
+            listarGrupos = grupoDesignadoDao.listarTodos();
+        }catch (Exception e){
+            FacesMessage message = new FacesMessage(e.getMessage());
+            message.setSeverity(FacesMessage.SEVERITY_ERROR);
+            FacesContext.getCurrentInstance().addMessage(null, message);
+        }
+        return listarGrupos;
+    }
 }

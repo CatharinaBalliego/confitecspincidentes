@@ -15,7 +15,7 @@ public class GrupoDesignadoDao {
 
 
         try{
-            listaGrupo = em.createQuery(": from GrupoDesignado").getResultList();
+            listaGrupo = em.createQuery(" from GrupoDesignado").getResultList();
         }catch (Exception e){
             throw new Exception(e);
         }finally {

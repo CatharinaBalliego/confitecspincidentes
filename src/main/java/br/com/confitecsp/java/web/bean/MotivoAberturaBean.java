@@ -112,4 +112,14 @@ public class MotivoAberturaBean implements Serializable {
             FacesContext.getCurrentInstance().addMessage(null, message);
         }
     }
+    public List<MotivoAbertura> getBuscarAbertura(){
+        try{
+            incidentesAbertos = motivoAberturaDao.listarTodos();
+        }catch (Exception e){
+            FacesMessage message = new FacesMessage(e.getMessage());
+            message.setSeverity(FacesMessage.SEVERITY_ERROR);
+            FacesContext.getCurrentInstance().addMessage(null, message);
+        }
+        return incidentesAbertos;
+    }
 }
