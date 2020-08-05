@@ -2,10 +2,10 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
         "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html    xmlns="http://www.w3.org/1999/xhtml"
-                xmlns:h="http://java.sun.com/jsf/html"
-                xmlns:f="http://java.sun.com/jsf/core"
-                xmlns:b="http://bootsfaces.net/ui"
-                xmlns:ui="http://java.sun.com/jsf/facelets">
+         xmlns:h="http://java.sun.com/jsf/html"
+         xmlns:f="http://java.sun.com/jsf/core"
+         xmlns:b="http://bootsfaces.net/ui"
+         xmlns:ui="http://java.sun.com/jsf/facelets">
 
 <h:head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
@@ -15,58 +15,65 @@
 <h:body>
     <ui:composition template = "layout/testTemplate.xhtml">
 
-    <h:messages globalOnly="true"/>
+        <h:messages globalOnly="true"/>
 
-<ui:define name = "content">
+        <ui:define name = "content">
 
 
-    <b:container fluid="true">
+            <b:container fluid="true">
 
-    <b:dataTable value="#{classificacaoBean.incidentes}" var="incidente">
+                <b:dataTable value="#{classificacaoBean.incidentes}" var="incidente">
 
-                <b:column>
-                    <f:facet name="header">Número do Incidente</f:facet>
-                    #{incidente.num_incidente}
-                </b:column>
+                    <b:column>
+                        <f:facet name="header">Número do Incidente</f:facet>
+                        #{incidente.num_incidente}
+                    </b:column>
 
-                <b:column>
-                    <f:facet name="header">Motivo Abertura</f:facet>
-                    #{incidente.cd_abertura.desc_abertura}
-                </b:column>
+                    <b:column>
+                        <f:facet name="header">Motivo Abertura</f:facet>
+                        #{incidente.cd_abertura.desc_abertura}
+                    </b:column>
 
-                <b:column>
-                    <f:facet name="header">Motivo Encerramento</f:facet>
-                    #{incidente.cd_encerramento.desc_encerramento}
-                </b:column>
-                <b:column>
-                    <f:facet name="header">Usuario</f:facet>
-                    #{incidente.cd_email_usuario.desc_usuario_email}
-                </b:column>
-                <b:column>
-                    <f:facet name="header">Grupo Designado</f:facet>
-                    #{incidente.cd_grupo.desc_grupo_nome}
-                </b:column>
-                <b:column>
-                    <f:facet name="header">Data de Cadastro: </f:facet>
-                    #{incidente.data_cadastro}
-                </b:column>
+                    <b:column>
+                        <f:facet name="header">Motivo Encerramento</f:facet>
+                        #{incidente.cd_encerramento.desc_encerramento}
+                    </b:column>
 
-                <b:column>
-                    <f:facet name="header">Editar</f:facet>
-                    <h:link value="Editar" outcome="editar">
-                        <f:param name="incidente" value="#{incidente.cd_incidente}"/>
-                    </h:link>
-                </b:column>
+                    <b:column>
+                        <f:facet name="header">Usuario</f:facet>
+                        #{incidente.cd_email_usuario.desc_usuario_email}
+                    </b:column>
+                    <b:column>
+                        <f:facet name="header">Grupo Designado</f:facet>
+                        #{incidente.cd_grupo.desc_grupo_nome}
+                    </b:column>
+                    <b:column>
+                        <f:facet name="header">Data de Cadastro: </f:facet>
+                        #{incidente.data_cadastro}
+                    </b:column>
 
-    </b:dataTable>
-    </b:container>
-<br/>
-    <div class="link">
+                    <b:column>
+                        <f:facet name="header">Observacao: </f:facet>
+                        #{incidente.classificacao_observacao}
+                    </b:column>
 
-    <b:link value="Novo" outcome="adicionar" class="btnNovo"/>
-    </div>
 
-</ui:define>
+                    <b:column>
+                        <f:facet name="header">Editar</f:facet>
+                        <h:link value="Editar" outcome="editar">
+                            <f:param name="incidente" value="#{incidente.cd_incidente}"/>
+                        </h:link>
+                    </b:column>
+
+                </b:dataTable>
+            </b:container>
+            <br/>
+            <div class="link">
+
+                <b:link value="Novo" outcome="adicionar" class="btnNovo"/>
+            </div>
+
+        </ui:define>
     </ui:composition>
 </h:body>
 </html>

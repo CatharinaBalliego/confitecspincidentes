@@ -14,7 +14,7 @@ public class MotivoAberturaDao {
 
 
         try {
-            listaAbertura = em.createQuery("from MotivoAbertura").getResultList();
+            listaAbertura = em.createQuery("from MotivoAbertura order by desc_abertura").getResultList();
 
 
         } catch (Exception e) {

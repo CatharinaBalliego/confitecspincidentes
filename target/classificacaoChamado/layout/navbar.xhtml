@@ -5,24 +5,15 @@
              xmlns:ui="http://java.sun.com/jsf/facelets"
              xmlns:f="http://java.sun.com/jsf/core"
              xmlns:b="http://bootsfaces.net/ui">
+    <b:navBar class="navbar navbar-default navbar-inverse navbar-fixed-top" style="background: rgb(242, 242, 242); border-bottom: 1px solid #c0c0c0">
 
-<!--    <b:navBar brand="Confitec" brandHref="#" fixed="top" inverse="true">-->
-<!--        <b:navbarLinks>-->
-<!--            <b:navLink value="Home" href="#"></b:navLink>-->
-<!--            <b:navLink value="About" href="#about"></b:navLink>-->
-<!--            <b:navLink value="Contact" href="#contact"></b:navLink>-->
-<!--        </b:navbarLinks>-->
-<!--    </b:navBar>-->
-    <b:navBar class="navib">
+        <div class="img">
 
-<div class="img">
-
-                <h:graphicImage value = "layout/logo/LOGO-CINZA.png" style="width:10%; heigth:10%;position:absolute;left:0;"/>
-</div>
-
-
-
-
+            <h:graphicImage value = "layout/logo/LOGO-CINZA.png" style="width:10%; heigth:10%;position:absolute;left:0;"/>
+        </div>
+        <div class="user-name">
+            <h5 style="position:absolute;right:0;margin:15px">
+                <h:outputText value="#{user.computerName()}" /></h5>
+        </div>
     </b:navBar>
-
-        </ui:fragment>
+</ui:fragment>

@@ -12,7 +12,7 @@ public class MotivoEncerramentoDao {
         List<MotivoEncerramento> listaEncerramento = null;
 
         try {
-            listaEncerramento = em.createQuery("from MotivoEncerramento").getResultList();
+            listaEncerramento = em.createQuery("from MotivoEncerramento order by desc_encerramento").getResultList();
         } catch (Exception e) {
             throw new Exception(e);
         } finally {

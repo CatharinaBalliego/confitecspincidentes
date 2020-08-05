@@ -46,6 +46,10 @@ public class Classificacao  implements Serializable {
     private LocalDateTime data_cadastro;
 
 
+    @Size(max = 200)
+    @Column(name = "observacao_chamado")
+    private String classificacao_observacao;
+
 
     public Classificacao() {
     }
@@ -108,14 +112,14 @@ public class Classificacao  implements Serializable {
         this.data_cadastro = data_cadastro;
     }
 
-    //    @Override
-//    public String toString() {
-//        return "ClassificacaoIncidente{" +
-//                "cd_incidente='" + cd_incidente + '\'' +
-//                ", motivo_abertura=" + cd_abertura +
-//                ", motivo_encerramento=" + cd_encerramento +
-//                '}';
-//    }
+    public String getClassificacao_observacao() {
+        return classificacao_observacao;
+    }
+
+    public void setClassificacao_observacao(String classificacao_observacao) {
+        this.classificacao_observacao = classificacao_observacao;
+    }
+
 
 
     @Override
@@ -127,6 +131,8 @@ public class Classificacao  implements Serializable {
                 ", cd_encerramento=" + cd_encerramento +
                 ", cd_grupo=" + cd_grupo +
                 ", cd_email_usuario=" + cd_email_usuario +
+                ", data_cadastro=" + data_cadastro +
+                ", classificacao_observacao='" + classificacao_observacao + '\'' +
                 '}';
     }
 }

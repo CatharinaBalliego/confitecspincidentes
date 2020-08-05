@@ -17,58 +17,63 @@
 <h:body>
     <ui:composition template = "layout/testTemplate.xhtml">
         <ui:define name = "content">
-<!--    <b:form horizontal="true">-->
+            <!--    <b:form horizontal="true">-->
 
             <b:container fluid="true">
-        <h3>Registrar Novo Incidente</h3>
-        <br/>
+                <h3>Registrar Novo Incidente</h3>
+                <br/>
 
-<h:form>
+                <h:form>
 
-        <b:panelGrid columns="3">
-            <h:outputLabel value="Numero do Incidente: "/>
-            <b:inputText id="num_incidente" value="#{classificacaoBean.classificacao.num_incidente}" required="true" labe="Num_incidente" >
-                <f:validateLength minimum="10" maximum="10"/>
-            </b:inputText>
-            <b:message for="num_incidente"/>
+                    <b:panelGrid columns="3">
+                        <h:outputLabel value="Numero do Incidente: "/>
+                        <b:inputText id="num_incidente" value="#{classificacaoBean.classificacao.num_incidente}" required="true" labe="Num_incidente" >
+                            <f:validateLength minimum="10" maximum="10"/>
+                        </b:inputText>
+                        <b:message for="num_incidente"/>
 
-            <h:outputLabel value="Motivo de Abertura: "/>
-            <b:selectOneMenu value="#{classificacaoBean.classificacao.cd_abertura}"  required="true" converter="aberturaConverter" id="cd_abertura">
-                <f:selectItems value="#{motivoAberturaBean.buscarAbertura}"  var="abertura" itemValue="#{abertura.cd_abertura}"
-                               itemLabel="#{abertura.desc_abertura}"/>
-            </b:selectOneMenu>
-            <b:message for="cd_abertura"/>
+                        <h:outputLabel value="Motivo de Abertura: "/>
+                        <b:selectOneMenu value="#{classificacaoBean.classificacao.cd_abertura}"  required="true" converter="aberturaConverter" id="cd_abertura">
+                            <f:selectItems value="#{motivoAberturaBean.buscarAbertura}"  var="abertura" itemValue="#{abertura.cd_abertura}"
+                                           itemLabel="#{abertura.desc_abertura}"/>
+                        </b:selectOneMenu>
+                        <b:message for="cd_abertura"/>
 
-            <h:outputLabel value="Motivo de Encerramento: "/>
-            <b:selectOneMenu value="#{classificacaoBean.classificacao.cd_encerramento}" required="true" converter="encerramentoConverter" id="cd_encerramento">
-                <f:selectItems value="#{motivoEncerramentoBean.buscarEncerramento}"  var="prioridade" itemValue="#{prioridade.cd_encerramento}"
-                               itemLabel="#{prioridade.desc_encerramento}"/>
-            </b:selectOneMenu>
-            <b:message for="cd_encerramento"/>
+                        <h:outputLabel value="Motivo de Encerramento: "/>
+                        <b:selectOneMenu value="#{classificacaoBean.classificacao.cd_encerramento}" required="true" converter="encerramentoConverter" id="cd_encerramento">
+                            <f:selectItems value="#{motivoEncerramentoBean.buscarEncerramento}"  var="prioridade" itemValue="#{prioridade.cd_encerramento}"
+                                           itemLabel="#{prioridade.desc_encerramento}"/>
+                        </b:selectOneMenu>
+                        <b:message for="cd_encerramento"/>
 
-            <h:outputLabel value="Usuario: "/>
-            <b:selectOneMenu value="#{classificacaoBean.classificacao.cd_email_usuario}" required="true" converter="emailConverter" id="cd_email_usuario">
-                <f:selectItems value="#{emailUsuarioBean.selecionarEmail}"  var="emails" itemValue="#{emails.cd_email_usuario}"
-                               itemLabel="#{emails.desc_usuario_email}"/>
-            </b:selectOneMenu>
-            <b:message for="cd_email_usuario"/>
+                        <h:outputLabel value="Usuario: "/>
+                        <b:selectOneMenu value="#{classificacaoBean.classificacao.cd_email_usuario}" required="true" converter="emailConverter" id="cd_email_usuario">
+                            <f:selectItems value="#{emailUsuarioBean.selecionarEmail}"  var="emails" itemValue="#{emails.cd_email_usuario}"
+                                           itemLabel="#{emails.desc_usuario_email}"/>
+                        </b:selectOneMenu>
+                        <b:message for="cd_email_usuario"/>
 
-            <h:outputLabel value="Grupo Designado: "/>
-            <b:selectOneMenu value="#{classificacaoBean.classificacao.cd_grupo}" required="true" converter="grupoConverter" id="cd_grupo">
-                <f:selectItems value="#{grupoDesignadoBean.buscarGrupos}"  var="grupos" itemValue="#{grupos.cd_grupo}"
-                               itemLabel="#{grupos.desc_grupo_nome}"/>
-            </b:selectOneMenu>
-            <b:message for="cd_grupo"/>
+                        <h:outputLabel value="Grupo Designado: "/>
+                        <b:selectOneMenu value="#{classificacaoBean.classificacao.cd_grupo}" required="true" converter="grupoConverter" id="cd_grupo">
+                            <f:selectItems value="#{grupoDesignadoBean.buscarGrupos}"  var="grupos" itemValue="#{grupos.cd_grupo}"
+                                           itemLabel="#{grupos.desc_grupo_nome}"/>
+                        </b:selectOneMenu>
+                        <b:message for="cd_grupo"/>
+
+                        <h:outputLabel value="Observação: " />
+                        <b:inputTextarea id="obervacao_chamado" value="#{classificacaoBean.classificacao.classificacao_observacao}">
+
+                        </b:inputTextarea>
 
 
-        </b:panelGrid>
-        <b:commandButton value="Enviar" action="#{classificacaoBean.cadastrar}" class="enviarBtn"/>
-</h:form>
+                    </b:panelGrid>
+                    <b:commandButton value="Enviar" action="#{classificacaoBean.cadastrar}" class="enviarBtn"/>
+                </h:form>
 
             </b:container>
 
-<!--    </b:form>-->
-<br></br>
+            <!--    </b:form>-->
+            <br></br>
             <h:link value="Voltar" outcome="home" class="btnNovo"/>
         </ui:define>
     </ui:composition>

@@ -12,7 +12,7 @@ public class EmailUsuarioDao {
         List<EmailUsuario> listarEmail = null;
 
         try{
-            listarEmail = em.createQuery(" from EmailUsuario").getResultList();
+            listarEmail = em.createQuery(" from EmailUsuario order by desc_usuario_email").getResultList();
         }catch (Exception e){
             throw new Exception(e);
         }finally {
